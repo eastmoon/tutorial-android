@@ -97,6 +97,121 @@ Difference between and intent and and setcontentview
 http://stackoverflow.com/questions/13898355/difference-between-and-intent-and-and-setcontentview
 ---------------------------
 
+◎ Animation
+
+場景切換動畫依據前述法則，共有兩種物件：
+A. Intent & Activity.startActivity
+B. View & Activity.setContentView
+
+Android動畫運作有兩種方式：
+a. Animation & Animator Class
+使用物件操作定義動畫方式、事件。
+
+b. Animation Resource XML file
+將動畫運作定義於XML檔內，此方式無法於檔案內設定對應事件。
+
+合併上述兩種規範，共有以下組合方式處理動畫原則
+    A    B
+a  No   Yes
+b  Yes  Yes
+
+- A-a
+Intent & Activity.startActivity 切景，並使用Animation & Animator Class進行動畫運作處理。
+目前查無運作方式。
+
+- A-b
+Intent & Activity.startActivity 切景，並使用Animation Resource XML file進行動畫運作處理。
+{ 
+	startActivity( Intent ) / finish();
+	overridePendingTransition([Target-in animation resource], [Source-out animation resource]);
+}
+
+overridePendingTransition 是指定對應進出場景Activity物件的動畫，但句型並無法設置動畫事件，亦即此方式無法知道Activity動畫完結與否。
+
+- B-a
+View & Activity.setContentView 切景，並使用Animation & Animator Class進行動畫運作處理。
+{
+        ObjectAnimator anim = ObjectAnimator.ofFloat([Target View], [Property type], [Start value], [End value]);
+        anim.setDuration([Millisecond]);
+        anim.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) { ... }
+        });
+	anim.start()
+}
+
+Animator 物件可指定其需依設定之時間變動指定物件屬性的數值；可對物件設定對應的事件以處理後續或連續的運作。
+Animator 物件上層具有集合物件，可將多個Animator集合同步處理。
+
+※ 動畫事件宣告物件
+》 AnimatorListenerAdapter 
+宣告單一事件函數並掛載入Animator內。
+》 Animation.AnimationListener
+宣告所有動畫事件函數並掛載入Animator內。
+
+- B-b
+View & Activity.setContentView 切景，並使用Animation Resource XML file進行動畫運作處理。
+{
+        Animation anim = AnimationUtils.loadAnimation([Application Context], [Animation resource]);
+	anim.setAnimationListener(new Animation.AnimationListener() {...});
+        [Target View].startAnimation(anim);
+}
+
+載入已定義好的動畫資源檔案，並直接交付物件執行；此可對物件設定對應的事件以處理後續或連續的運作。
+※ 動畫事件宣告物件僅可使用AnimationListener物件。
+
+※ 相關文章參考：
+---------------------------
+Animation Resources
+http://developer.android.com/intl/zh-tw/guide/topics/resources/animation-resource.html
+
+View Animation
+http://developer.android.com/intl/zh-tw/guide/topics/graphics/view-animation.html
+
+Property Animation	
+http://developer.android.com/intl/zh-tw/guide/topics/graphics/prop-animation.html
+
+Activity.overridePendingTransition
+http://developer.android.com/intl/zh-tw/reference/android/app/Activity.html#overridePendingTransition(int, int)
+
+Android Activity切换动画overridePendingTransition
+http://blog.csdn.net/bufanni12/article/details/26453725
+
+Custom Animation while switching Activity, using overridePendingTransition()
+http://android-er.blogspot.tw/2013/04/custom-animation-while-switching.html
+
+Android animation while switching activities
+http://www.mysamplecode.com/2013/02/android-animation-switching-activity.html
+
+Can I change the Android startActivity() transition animation?
+http://stackoverflow.com/questions/3515264/can-i-change-the-android-startactivity-transition-animation
+
+is it possible to do transition animations when changing views in the same activity?
+http://stackoverflow.com/questions/4446105/is-it-possible-to-do-transition-animations-when-changing-views-in-the-same-activ
+
+Animation Resources and AnimationListener
+http://www.javacodegeeks.com/2013/06/animation-resources-and-animationlistener.html
+---------------------------
+
+◎ Transition
+
+※ 相關文章參考：
+---------------------------
+Defining Custom Animations
+http://developer.android.com/intl/zh-tw/training/material/animations.html
+
+Animating Views Using Scenes and Transitions
+http://developer.android.com/intl/zh-tw/training/transitions/index.html
+---------------------------
+
 ---------------------
 
 Reference page :
+Android grow LinearLayout using animation
+http://stackoverflow.com/questions/18582310/android-grow-linearlayout-using-animation
+
+Circular Reveal Animation
+https://guides.codepath.com/android/Circular-Reveal-Animation
+
+Java Code Examples for android.view.animation.LayoutAnimationController
+http://www.programcreek.com/java-api-examples/index.php?api=android.view.animation.LayoutAnimationController
