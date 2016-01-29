@@ -53,8 +53,13 @@ Demo : Activity_Switching_LifeCycle
 
 1. Activity A執行onPause方法。
 2. Activity B按順序執行onCreate、onStart、onResume方法；Activity B 現在擁有使用者焦點。
-3. 如果螢幕上已經看不到Activity A，就會執行Activity A的onStop方法。
+3. 若Activity轉場動畫執行完畢，發生如下動作：
+	- 如果螢幕上由Activity B完全覆蓋，就會執行Activity B的onEnterAnimationComplete方法。
+	- 如果螢幕上已經看不到Activity A，就會執行Activity A的onStop方法。
+	- 依據轉場啟動命令，Activity A會執行onDestroy來避免佔用多於記憶體。
 
+兩個Activity的轉場行為可參考『01_Framework_SwitchingActivities』內說明。
+※ 需要注意重點，Activity轉場設定並啟動後，onResume方法執行時並不是轉場停止的時點，而是取得焦點的時點；例如，場景由左至右過場，onResume發生在進場動畫啟動的時點，因此若內部動畫於此執行會瞬間造成系統負擔而影響轉場動畫運作。
 
 ---------------------
 

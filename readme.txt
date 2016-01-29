@@ -127,3 +127,6 @@ http://code.tutsplus.com/?p=22764
 
 Android Tutorial for Beginners: Part 1
 http://www.raywenderlich.com/78574/android-tutorial-for-beginners-part-1
+
+[閒聊] 那些我從 android app 學到的事情
+https://www.ptt.cc/bbs/AndroidDev/M.1370641609.A.1BF.html
