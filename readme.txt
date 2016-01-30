@@ -115,6 +115,12 @@ http://www.codedata.com.tw/java/groovy-tutorial-1-understanding-groovy/
 應用程式啟動後，無須呈現任何畫面，並存在於行動裝置的背景程序中持續的運作，此即為背景服務應用程式。
 例如Android作業系統內建一個檢查應用程式是否需要更新的程式，如果發現需要更新應用程式，它就會通知使用者更新應用程式的訊息。
 
+◎ Android IDE Problem 
+
+Android studio 1.4 import .jar file
+http://www.hyjiacan.com/android-studio-import-jar/
+http://stackoverflow.com/questions/33380785/how-to-import-library-android-studio-1-4
+
 ---------------------
 
 Reference page :

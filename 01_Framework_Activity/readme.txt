@@ -70,3 +70,7 @@ http://blog.csdn.net/yelangjueqi/article/details/9466347
 
 處理程序和執行緒
 http://developer.android.com/intl/zh-tw/guide/components/processes-and-threads.html
+
+
+[Android] 多執行緒-Handler和Thread的關係 （2）
+http://j796160836.pixnet.net/blog/post/29895257
