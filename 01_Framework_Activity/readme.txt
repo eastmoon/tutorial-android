@@ -18,9 +18,6 @@ Android應用程式還有一個很重要的設計方式，就是把應用程式�
 ---------------------------
 Activity
 http://developer.android.com/intl/zh-tw/guide/components/activities.html
-
-Fragment
-http://developer.android.com/intl/zh-tw/guide/components/fragments.html
 ---------------------------
 
 ◎ 生命週期
@@ -61,6 +58,19 @@ Demo : Activity_Switching_LifeCycle
 兩個Activity的轉場行為可參考『01_Framework_SwitchingActivities』內說明。
 ※ 需要注意重點，Activity轉場設定並啟動後，onResume方法執行時並不是轉場停止的時點，而是取得焦點的時點；例如，場景由左至右過場，onResume發生在進場動畫啟動的時點，因此若內部動畫於此執行會瞬間造成系統負擔而影響轉場動畫運作。
 
+
+◎ Fragment
+
+※ 相關文章參考：
+---------------------------
+Fragment
+http://developer.android.com/intl/zh-tw/guide/components/fragments.html
+
+Building a Dynamic UI with Fragments
+http://developer.android.com/intl/zh-tw/training/basics/fragments/index.html
+---------------------------
+
+
 ---------------------
 
 Reference page :
@@ -70,7 +80,6 @@ http://blog.csdn.net/yelangjueqi/article/details/9466347
 
 處理程序和執行緒
 http://developer.android.com/intl/zh-tw/guide/components/processes-and-threads.html
-
 
 [Android] 多執行緒-Handler和Thread的關係 （2）
 http://j796160836.pixnet.net/blog/post/29895257
