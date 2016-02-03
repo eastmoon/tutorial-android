@@ -136,3 +136,8 @@ http://www.raywenderlich.com/78574/android-tutorial-for-beginners-part-1
 
 [閒聊] 那些我從 android app 學到的事情
 https://www.ptt.cc/bbs/AndroidDev/M.1370641609.A.1BF.html
+
+Component issue :
+
+EditText:修改虛擬鍵盤的Enter鍵
+http://androidbounce.blogspot.tw/2012/09/edittextenter.html
