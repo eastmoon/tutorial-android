@@ -147,20 +147,6 @@ Android 元件佈局(二) RelativeLayout
 http://corn0521.blogspot.tw/2011/04/android-relativelayout.html
 ---------------------------
 
-◎ Compound View
-
-※ 相關文章參考：
----------------------------
-Creating Compound Views on Android
-http://code.tutsplus.com/tutorials/creating-compound-views-on-android--cms-22889
-
-Creating custom and compound Views in Android - Tutorial
-http://www.vogella.com/tutorials/AndroidCustomViews/article.html
-
-Creating Custom Views in Android Tutorial
-http://javatechig.com/android/creating-custom-views-in-android-tutorial
----------------------------
-
 ◎ Custom Views
 
 自訂元件是繼承View後修改其內容與對應之屬性。
@@ -182,6 +168,98 @@ http://code.tutsplus.com/tutorials/android-sdk-creating-custom-views--mobile-145
 在Layout檔案中使用自訂的View
 http://shung007.blogspot.tw/2010/11/android-tips-layoutview.html
 ---------------------------
+
+◎ Compound View
+Demo : Compound_View
+Demo : Compound_View_No_XML
+
+自訂元件依其所在的UI架構下屬於底層演算處理，然而若僅需將重複利用性元件組合封裝，則可使用Compound View(複合元件)。
+Compound View並非獨立的元件類別，其不同於Custom View僅是繼承的物件從View變為ViewGrop下的Layout物件；並且更換其相對的運作事件。
+在起始與運作上剔除onDraw等較為繁瑣的細節，主要是針對混合既存的元件、設立對應的操作事件、輸出入資料介面。
+
+1. Standard
+標準上，其建立過程與自訂相同，共有三個對應檔案產生
+- res/value/attrs_[Custom View Name]，屬性檔案
+- res/layout/[Custom Layout File]，配置檔案
+- java/[namespace]/[java class]，類別檔案
+
+在範例Compound_View實作了其檔案結構：
+
+● 屬性檔案
+提供當元件被其他配置引用時，輸入之特定參數名稱。
+<[namespace].[java class] ... app:[Compound View attribute] = [Value] />
+app為指定自訂元件設立的屬性資源名稱空間(namespace)。
+
+○ 配置檔案
+提供當元件被使用時其應包括之元件關係與參數設定。
+<merga> ... </merga>
+merga為集合標籤，用於減去取代其他Layout，若使用include則會將此標籤忽略將內容直接替換入上層配置中。
+
+● 類別檔案
+public class [Compound View] extends LinearLayout
+{
+	// Constructor
+	public Class(Context context) {...}	
+	public Class(Context context, AttributeSet attrs) {...}
+	public Class(Context context, AttributeSet attrs, int defStyle) {...}
+
+	// Initialize
+	private void initializeViews(Context context, AttributeSet attrs) {
+		// Setting layout
+		// Retrieve Attribute
+	}
+
+	// View on layout
+	@Override
+	protected void onFinishInflate() {...}
+}
+
+在構築上，主要分三段，建構、初始架構、初始內容。
+建構：與自訂元件時完全一致，可將此設計視為基本結構。
+初始架構：分為兩段取回屬性、設定配置，使用上只需利用對應的屬性檔案、配置檔案參數來操作物件並設置。
+初始內容：配置完成後才觸發之事件，此時可以設置對應的UI內容、初始資訊、事件行為。
+
+2. No XML
+引用XML設計的優點在於設計視覺化、結構化，但缺點在於資料分散、引用繁瑣，且不利動態設計；雖設計上，使用Compound View其目的等同動態設計的一環，但使用配置檔仍會有缺乏自由度的狀況。
+
+在範例Compound_View_No_XML實作了其檔案結構：
+
+● 刪除屬性檔案、配置檔案
+因為刪除此兩檔案，元件被其他配置引用時，輸入之參數名稱不可加上任何名稱空間(namespace)。
+<[namespace].[java class] ... [Compound View attribute] = [Value] />
+
+○ 類別檔案
+類別檔案設計上僅有三處細節變動
+
+- 初始架構：取回屬性
+直接對AttributeSet物件操作已取回屬性值。
+
+AttributeSet.getAttributeValue(null, [Property name]);
+第一參數為名稱空間(namespace)，因無屬性檔案，所以設為null，以表示為無名稱空間。
+且回傳為null，則表示無輸入參數。
+
+- 初始架構：設定配置
+移除配置檔案，改用Dynamic Layout的設計來新增元件。
+
+- 初始內容
+初始本為設定初始資訊、事件行為，但此部分將直接與設定配置一起完成，此部分僅保留處理UI內容。
+
+※ 相關文章參考：
+---------------------------
+Creating Compound Views on Android
+http://code.tutsplus.com/tutorials/creating-compound-views-on-android--cms-22889
+
+Creating custom and compound Views in Android - Tutorial
+http://www.vogella.com/tutorials/AndroidCustomViews/article.html
+
+Creating Custom Views in Android Tutorial
+http://javatechig.com/android/creating-custom-views-in-android-tutorial
+
+AttributeSet
+http://developer.android.com/intl/zh-tw/reference/android/util/AttributeSet.html
+---------------------------
+
+
 
 ◎ Drag and Drop
 http://developer.android.com/intl/zh-tw/guide/topics/ui/drag-drop.html
