@@ -117,9 +117,21 @@ http://www.codedata.com.tw/java/groovy-tutorial-1-understanding-groovy/
 
 ◎ Android IDE Problem 
 
+---------------------------
 Android studio 1.4 import .jar file
 http://www.hyjiacan.com/android-studio-import-jar/
 http://stackoverflow.com/questions/33380785/how-to-import-library-android-studio-1-4
+
+---------------------------
+Error Issus : No cached version of [Remote Library] available for offline mode
+http://stackoverflow.com/questions/22607661/no-cached-version-of-com-android-tools-buildgradle0-9-1-available-for-offline
+
+1. Uncheck "Offline work" in File > Settings > Build, Execution, Deployment > Build Tools > Gradle > Global Gradle Settings
+2. Resync the project, for example by restarting the Android Studio
+3. Once synced, you can check the option again to work offline.
+
+※ Work in Android Studio 1.4
+---------------------------
 
 ---------------------
 
@@ -141,3 +153,14 @@ Component issue :
 
 EditText:修改虛擬鍵盤的Enter鍵
 http://androidbounce.blogspot.tw/2012/09/edittextenter.html
+
+Library import :
+
+using facebook sdk in android studio
+http://stackoverflow.com/questions/19961828/using-facebook-sdk-in-android-studio
+
+Android Studio 0.8.1 - how to use Facebook SDK?
+http://stackoverflow.com/questions/24466921/android-studio-0-8-1-how-to-use-facebook-sdk
+
+Android Studio - Quick Start to Brightcove Player SDK for Android
+http://docs.brightcove.com/en/perform/mobile-sdks/brightcove-player-sdk-for-android/guides/studio-android-sdk-quick-start.html

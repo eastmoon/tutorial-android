@@ -71,7 +71,6 @@ https://gist.github.com/tony1223/5732145
 Detect 3G or Wifi Network restoration
 http://stackoverflow.com/questions/4503561/
 
-
 Building Android Applications that Use Web API, Google ppt
 https://docs.google.com/presentation/d/1ac39UGuRGHNmuEwhC3VNVFQo3LAjrcqcJ_-A0ZIp9Ao/preview?slide=id.p18
 
