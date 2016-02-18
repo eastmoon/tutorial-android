@@ -261,37 +261,21 @@ http://developer.android.com/intl/zh-tw/reference/android/util/AttributeSet.html
 
 ◎ Compare performance
 Demo : Dynamic_Layout_ComparePerformance
-
-Dynamic Layout使用XML layout resource與Compound view component，在同樣生成數量下所需之時間差比較。
-
-1. Dynamice by layout resource
-
-2. Dynamice by compound view component
-
-※ 相關文章參考：
----------------------------
-Java Performance Testing [duplicate]
-http://stackoverflow.com/questions/447739/java-performance-testing
-
-How to find View from string instead of R.id
-http://stackoverflow.com/questions/8438943/how-to-find-view-from-string-instead-of-r-id
-
-Resource.getIdentifier
-http://developer.android.com/intl/zh-tw/reference/android/content/res/Resources.html#getIdentifier(java.lang.String, java.lang.String, java.lang.String)
----------------------------
+詳細說明參考範例說明文檔。
 
 ◎ Drag and Drop
 http://developer.android.com/intl/zh-tw/guide/topics/ui/drag-drop.html
 
 ◎ Dialogs
 http://developer.android.com/intl/zh-tw/guide/topics/ui/dialogs.html
+Demo : Dialogs
+詳細說明參考範例說明文檔。
 
 ◎ Menu
 http://developer.android.com/intl/zh-tw/guide/topics/ui/menus.html
 
 ◎ Toast
 http://developer.android.com/intl/zh-tw/guide/topics/ui/notifiers/toasts.html
-
 
 
 ---------------------
