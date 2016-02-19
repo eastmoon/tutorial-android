@@ -272,7 +272,8 @@ Demo : Dialogs
 詳細說明參考範例說明文檔。
 
 ◎ Menu
-http://developer.android.com/intl/zh-tw/guide/topics/ui/menus.html
+Demo : Menu
+詳細說明參考範例說明文檔。
 
 ◎ Toast
 http://developer.android.com/intl/zh-tw/guide/topics/ui/notifiers/toasts.html

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Icon source : https://design.google.com/icons/#ic_favorite -->
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_favorite_black_48dp"
+        android:title="Action Favorite"
+        app:showAsAction="ifRoom" />
+
+    <!-- Icon source : https://design.google.com/icons/#ic_settings_applications -->
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_applications_black_48dp"
+        android:title="Action Settings"
+        app:showAsAction="ifRoom" />
+
+</menu>
