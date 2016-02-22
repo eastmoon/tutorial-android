@@ -131,6 +131,18 @@ http://stackoverflow.com/questions/22607661/no-cached-version-of-com-android-too
 3. Once synced, you can check the option again to work offline.
 
 ※ Work in Android Studio 1.4
+
+---------------------------
+
+◎ Android Manifest Setting
+
+---------------------------
+設定固定畫面不翻轉
+http://ocean2002n.pixnet.net/blog/post/89552289
+
+android:screenOrientation
+http://developer.android.com/intl/zh-tw/guide/topics/manifest/activity-element.html#screen
+
 ---------------------------
 
 ---------------------
