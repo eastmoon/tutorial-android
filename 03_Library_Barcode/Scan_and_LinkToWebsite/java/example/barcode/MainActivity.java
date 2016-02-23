@@ -1,4 +1,4 @@
-package example.bardcode;
+package example.barcode;
 
 import android.app.Activity;
 import android.app.AlertDialog;

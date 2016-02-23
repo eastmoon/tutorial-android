@@ -115,6 +115,43 @@ http://www.codedata.com.tw/java/groovy-tutorial-1-understanding-groovy/
 應用程式啟動後，無須呈現任何畫面，並存在於行動裝置的背景程序中持續的運作，此即為背景服務應用程式。
 例如Android作業系統內建一個檢查應用程式是否需要更新的程式，如果發現需要更新應用程式，它就會通知使用者更新應用程式的訊息。
 
+◎ Maven
+
+Apache Maven，是一個軟體(特別是Java軟體)專案管理及自動構建工具，由Apache軟體基金會所提供。
+專案物件模型(Project Object Model，POM)概念，Maven利用一個訊息文檔(pom.xml)管理一個項目(Project)的構建(Built)、相依(Dependencies)。
+Maven可動態下載Java函式庫與Maven插件，並將之儲存於本地的暫存區；其插件可能來自不同的Maven資料庫(Repositories)，例如Maven 2中央資料庫。
+
+Maven可以由C#、Ruby、Scala或其他語言撰寫，而其插件基底架構(Plugin-based architecture)，讓任何應用程式皆可由標準輸入控制。
+理論上，Maven可讓任何人經由工具將任何語言，建置成插件；但實際上，除Java語言外的支援非常的薄弱。
+
+專案物件模型(POM)提供單一專案的所有設定項，其設定皆會包括於專案名稱下，並獨立或相依於其他專案；例如在特定單元錯誤時，改以某版本的函示庫編譯插件。
+
+※ 相關文章參考：
+---------------------------
+【認識 Gradle】（1）講古的時間 Apache Ant
+http://www.codedata.com.tw/java/understanding-gradle-1-ant/
+
+【認識 Gradle】（2）講古的時間 Apache Maven
+http://www.codedata.com.tw/java/understanding-gradle-2-maven/
+
+Apache Maven
+https://zh.wikipedia.org/wiki/Apache_Maven
+
+How to import Maven dependency in Android Studio/IntelliJ?
+http://stackoverflow.com/questions/16595287/how-to-import-maven-dependency-in-android-studio-intellij
+---------------------------
+
+◎ Gradle
+
+※ 相關文章參考：
+---------------------------
+【認識 Gradle】（3）Gradle 起手式
+http://www.codedata.com.tw/java/understanding-gradle-3-getting-started/
+
+【認識 Gradle】（4）看懂 Gradle Script
+http://www.codedata.com.tw/java/understanding-gradle-4-gradle-script/
+---------------------------
+
 ◎ Android IDE Problem 
 
 ---------------------------
@@ -176,3 +213,12 @@ http://stackoverflow.com/questions/24466921/android-studio-0-8-1-how-to-use-face
 
 Android Studio - Quick Start to Brightcove Player SDK for Android
 http://docs.brightcove.com/en/perform/mobile-sdks/brightcove-player-sdk-for-android/guides/studio-android-sdk-quick-start.html
+
+深入分析Java ClassLoader原理
+http://blog.csdn.net/xyang81/article/details/7292380
+
+彻底搞懂Java ClassLoader
+http://weli.iteye.com/blog/1682625
+
+The basics of Java class loaders
+http://www.javaworld.com/article/2077260/learn-java/learn-java-the-basics-of-java-class-loaders.html
