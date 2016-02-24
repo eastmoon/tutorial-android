@@ -295,3 +295,6 @@ http://j796160836.pixnet.net/blog/post/29895257
 LayoutInflater作用及使用
 http://www.imyukin.com/?p=226
 
+layout 按比例布局
+http://fanli7.net/a/bianchengyuyan/xml/2011/1125/146682.html
+

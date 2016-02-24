@@ -1,4 +1,4 @@
-﻿◎ OkHttp
+﻿◎ WebAPI Library OkHttp
 Demo : Send_HTTP_Request
 
 HTTP需求傳送擁有諸多的函數庫可應用，在此選擇OkHttp library為主要工具。
