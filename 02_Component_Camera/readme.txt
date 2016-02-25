@@ -26,6 +26,10 @@ Demo : Call_library
 2. Declare Activity orientation in AndroidManifest.xml, it will affect camera orientation.
 	- android:screenOrientation="landscape"
 
+※ Camera class was deprecated in API level 21.
+We recommend using the new android.hardware.camera2 API for new applications.
+
+
 
 ---------------------
 
@@ -39,3 +43,6 @@ http://jim690701.blogspot.tw/2012/07/android-camera-android.html
 
 Controlling the Camera
 http://developer.android.com/intl/zh-tw/training/camera/cameradirect.html
+
+Android Camera2Basic Sample
+https://github.com/googlesamples/android-Camera2Basic
