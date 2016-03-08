@@ -46,3 +46,12 @@ http://developer.android.com/intl/zh-tw/training/camera/cameradirect.html
 
 Android Camera2Basic Sample
 https://github.com/googlesamples/android-Camera2Basic
+
+Android -- Camera2(Android5.0)
+http://www.cnblogs.com/yydcdut/p/4202052.html
+
+Camera2
+https://github.com/pinguo-yuyidong/Camera2
+
+攝影機預覽實作 - 使用 android.hardware.camera2
+http://artistehsu.pixnet.net/blog/post/357300864

@@ -82,6 +82,9 @@ http://developer.android.com/intl/zh-tw/reference/java/net/HttpURLConnection.htm
 URL
 http://developer.android.com/intl/zh-tw/reference/java/net/URL.html
 
+Communicating with the UI Thread
+http://developer.android.com/intl/zh-tw/training/multiple-threads/communicate-ui.html
+
 
 Library :
 OkHttp

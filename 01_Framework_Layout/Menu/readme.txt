@@ -1,5 +1,6 @@
 ﻿◎ Menu
 http://developer.android.com/intl/zh-tw/guide/topics/ui/menus.html
+Demo : Menu_Structure
 
 Android選單機制共有三種類型：
 1. 選項選單(Option Menu)與動作列(Action Bar)
@@ -135,3 +136,13 @@ http://www.compiletimeerror.com/2013/09/context-menu-in-android-with-example.htm
 但彈出選單若流於內容說明補充等操作，亦可能造成程式過度繁瑣、設計累贅。
 且顯示於元件旁側，則適合於內容補充，非選項操控。
 對此設計應多加考量使用者經驗與介面設計。
+
+◎ Dynamic Option Menu
+http://stackoverflow.com/questions/15580111/how-can-i-dynamically-create-menu-items
+Demo : Dynamic_Option_Menu
+
+※ 相關文章參考：
+---------------------------
+Using menus in your apps: a tutorial
+http://www.101apps.co.za/index.php/articles/using-menus-in-your-apps-a-tutorial.html
+---------------------------

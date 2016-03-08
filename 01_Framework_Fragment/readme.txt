@@ -63,6 +63,35 @@ Demo : Dynamic_insert
 
 依文件內容所述，在commit執行前，行為並不會被執行。
 
+◎ Animation by setTransition
+{
+	FragmentTransaction.add(...).setTransition(FragmentTransaction.[Transaction Type]).commit();
+}
+
+◎ Animation by Resource XML file
+
+對於Resource XML file操作與Activity Switching概念相同，詳細參考[01_Framework_SwitchingActivities]
+
+{
+	FragmentTransaction.add(...).setCustomAnimations([Target-in animation resource], [Source-out animation resource]).commit();
+}
+
+◎ Animation by Animator Class
+Demo : Animation_with_dynamic_insert
+Demo : Animation_with_dynamic_insert_for_API16
+
+對於Animator Class操作與Activity Switching相同，詳細參考[01_Framework_SwitchingActivities]
+
+◎ 元件生成序
+
+在實驗多層Fragment用途後，統整出Android圖層結構性。
+
+1. 單一層級內，後生成(addView)的深度高(高者疊於低者)，不論是ViewGroup或View皆符合此結構。
+2. 單一層級內，Fragment(靜態、動態)的生成早於同層級的View component；亦即View永遠疊於Fragment上方。
+	※ 此項是否所有ViewGroup皆符合需在實驗。
+
+由於層級調整問題，在不同版本的Android API中有提供系統的操作行為，但考量版本涵蓋的手機量，在此改以考量使用與不使用該版本API來設計範例。
+
 ---------------------
 
 Reference page :
@@ -72,3 +101,9 @@ http://developer.android.com/intl/zh-tw/guide/components/fragments.html
 
 Android Fragment详解
 http://blog.csdn.net/t12x3456/article/category/1649005
+
+[Android]Fragment自定义动画、动画监听以及兼容性包使用
+http://www.cnblogs.com/lcyty/p/3383960.html
+
+Android: Using ObjectAnimator to translate a View with fractional values of the View's dimension
+http://stackoverflow.com/questions/10854940/android-using-objectanimator-to-translate-a-view-with-fractional-values-of-the

@@ -33,6 +33,9 @@ http://www.techotopia.com/index.php/Creating_an_Example_Android_App_in_Android_S
 
 Android 6 Tutorial 第一堂（1）西遊記裡的那隻潑猴
 http://www.codedata.com.tw/mobile/android-6-tutorial-1-1/
+
+Dashboards, what drevices we need. 
+https://developer.android.com/intl/zh-tw/about/dashboards/index.html
 ---------------------------
 
 ◎ 應用程式架構
@@ -179,6 +182,9 @@ http://ocean2002n.pixnet.net/blog/post/89552289
 
 android:screenOrientation
 http://developer.android.com/intl/zh-tw/guide/topics/manifest/activity-element.html#screen
+
+Disable Screen Orientation Dynamically In Android(Java)
+http://stackoverflow.com/questions/20529576/disable-screen-orientation-dynamically-in-androidjava
 
 ---------------------------
 
