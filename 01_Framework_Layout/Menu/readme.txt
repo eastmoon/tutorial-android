@@ -141,8 +141,24 @@ http://www.compiletimeerror.com/2013/09/context-menu-in-android-with-example.htm
 http://stackoverflow.com/questions/15580111/how-can-i-dynamically-create-menu-items
 Demo : Dynamic_Option_Menu
 
+在執行期間改變Option Menu狀態。
+先將Menu組成等參數結構放入onPrepareOptionsMenu()。
+在android 2.3以下，這函數僅在打開Menu實會執行。
+在android 3.0以上，除原本方式外，可以使用invalidateOptionsMenu()來觸發整個Menu建立過程(onCreateOptionsMenu、onPrepareOptionsMenu)。
+
 ※ 相關文章參考：
 ---------------------------
 Using menus in your apps: a tutorial
 http://www.101apps.co.za/index.php/articles/using-menus-in-your-apps-a-tutorial.html
+
+android小结(一)之menu
+http://zhouyunan2010.iteye.com/blog/1151215
+---------------------------
+
+◎ Custom action bar
+
+※ 相關文章參考：
+---------------------------
+Set action bar background
+http://stackoverflow.com/questions/14104091/is-there-a-way-to-set-actionbar-backgound-by-image-in-android
 ---------------------------
