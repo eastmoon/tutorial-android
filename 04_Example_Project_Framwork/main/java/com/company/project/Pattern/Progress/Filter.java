@@ -11,7 +11,7 @@ public class Filter implements IFilter {
         this.mKeyID = _keyID;
     }
 
-    // Set target method param type.
+    // get filter key id
     public String getKeyID() {
         return this.mKeyID;
     }

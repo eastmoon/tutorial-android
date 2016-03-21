@@ -31,7 +31,8 @@ public class WaitsProxy extends WebServiceProxy {
                 this.parseResponse("");
             }
         } catch(InterruptedException e ) {
-            ExceptionBox.getInstances().message("WaitsProxy Proxy : " + e.toString());
+            //ExceptionBox.getInstances().message("Waits Proxy : " + e.toString());
+            this.getProgress().setErrorMessage(e.toString());
         }
     }
 

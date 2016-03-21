@@ -48,9 +48,9 @@ public class SwitchingPipe extends Pipe {
         this.mTargetActivity = _target;
         // Create progress dialog
         this.mProgressDialog = new ProgressDialog(_source);
-        this.mProgressDialog.setTitle("Dialog title");
+        this.mProgressDialog.setTitle("Switching progress");
         this.mProgressDialog.setIcon(android.R.drawable.ic_dialog_info);
-        this.mProgressDialog.setMessage("Dialog message");
+        this.mProgressDialog.setMessage("Loading...");
         this.mProgressDialog.setIndeterminate(true);
         this.mProgressDialog.setCancelable(false);
         // Create thread handler
@@ -82,8 +82,13 @@ public class SwitchingPipe extends Pipe {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
+                        // 1. close dialog
                         mProgressDialog.dismiss();
-                        mProgress.nextStep();
+                        // 2. if loading pipe doesn't error, goto next step.
+                        if(mLoadingPipe.getIsError())
+                            mProgress.setErrorMessage(mLoadingPipe.getErrorMessage());
+                        else
+                            mProgress.nextStep();
                     }
                 });
             }
@@ -99,5 +104,11 @@ public class SwitchingPipe extends Pipe {
         this.mSourceActivity.startActivity(i);
         // execute internal program in parent class.
         super.onPipeComplete(_progress);
+    }
+
+    @Override
+    protected void onPipeError(Progress _progress) {
+        ExceptionBox.getInstances().message(_progress.getErrorMessage());
+        super.onPipeError(_progress);
     }
 }

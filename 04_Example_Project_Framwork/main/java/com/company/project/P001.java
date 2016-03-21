@@ -12,6 +12,7 @@ import com.company.project.Framework.EventListener.ClickEventListener;
 import com.company.project.Framework.Model.Login;
 import com.company.project.Pattern.Facade.ExceptionBox;
 import com.company.project.Pattern.Facade.Tools;
+import com.company.project.Pattern.Progress.Filters.ErrorFilter;
 import com.company.project.Pattern.Proxy.WaitsProxy;
 
 public class P001 extends BasicsActivity {
@@ -66,9 +67,11 @@ public class P001 extends BasicsActivity {
     public void onLogin(View v) {
         // Only switching activity.
         //this.switchingProgress(P002.class);
+        // Error progress
+        //this.switchingProgress(P002.class, new ErrorFilter("Error"));
         // Loading model and Switching activity.
         this.switchingProgress(P002.class,
-                new WaitsProxy("Wait1", 5000),
+                new WaitsProxy("Waits", 2000),
                 new Login());
     }
 }

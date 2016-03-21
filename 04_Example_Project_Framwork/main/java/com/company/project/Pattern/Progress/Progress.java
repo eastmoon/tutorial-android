@@ -12,12 +12,16 @@ public class Progress {
     private Pipe mPipe;
     private int mProgressIndex;
     private int mRoutingIndex;
+    private String mErrorMessage;
+    private boolean mIsError;
 
     // Constructor
     public Progress() {
         // Initial variable
         this.mProgressIndex = -1;
         this.mPipe = null;
+        this.mErrorMessage = "";
+        this.mIsError = false;
     }
 
     // Method : Goto next step in pipe routes.
@@ -35,7 +39,7 @@ public class Progress {
                 filter.execute(this);
             } else {
                 // 2.2 step doesn't exist, error.
-                ExceptionBox.getInstances().message("Progress error : Step name in routes doesn't fine filter.");
+                this.setErrorMessage("Progress error : Step name in routes doesn't fine filter.");
             }
         } else {
             // 2.3 index is maximum, pipe complete.
@@ -56,6 +60,9 @@ public class Progress {
             this.mRoutingIndex = this.mPipe.getRoutes().size();
             // execute End
             this.mPipe.execute(this, Pipe.STEP_END);
+        } else if(_keyID.equals(Pipe.STEP_ERROR)) {
+            // Error outcome.
+            this.mPipe.execute(this, Pipe.STEP_ERROR);
         } else {
             // 2. check step in routes.
             IFilter filter = this.mPipe.retrieve(_keyID);
@@ -65,7 +72,7 @@ public class Progress {
                 filter.execute(this);
             } else {
                 // 2.2 step doesn't exist, error.
-                ExceptionBox.getInstances().message("Progress error : Input keyID doesn't fine filter.");
+                this.setErrorMessage("Progress error : Input keyID doesn't fine filter.");
             }
         }
     }
@@ -78,7 +85,7 @@ public class Progress {
             this.mRoutingIndex = -1;
         }
         else
-            ExceptionBox.getInstances().message("Progress error : progress doesn't in pipe.");
+            this.setErrorMessage("Progress error : Progress doesn't in pipe.");
     }
     public Pipe getPipe() {
         return this.mPipe;
@@ -88,5 +95,17 @@ public class Progress {
     }
     public int getRoutingIndex() {
         return this.mRoutingIndex;
+    }
+    public void setErrorMessage(String _message) {
+        // 1. Saving message
+        this.mIsError = true;
+        this.mErrorMessage = _message;
+        // 2. goto error step
+        this.gotoStep(Pipe.STEP_ERROR);
+    }
+    public String getErrorMessage() {
+        if(!this.mIsError)
+            return "";
+        return this.mErrorMessage;
     }
 }

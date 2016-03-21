@@ -62,9 +62,9 @@ public class WebServiceProxy extends Filter implements IRemoteProxy, IAccessProx
                     if(this.mResponse != null)
                         data = new JSONObject(this.mResponse);
                     else
-                        ExceptionBox.getInstances().message("WebService Proxy : Response is null.");
+                        throw new Exception("WebService Proxy : Response is null.");
                 } catch(Exception e) {
-                    ExceptionBox.getInstances().message(e.toString());
+                    this.mProgress.setErrorMessage("IAccessProxy : " + e.toString());
                 }
                 break;
             }
@@ -87,7 +87,7 @@ public class WebServiceProxy extends Filter implements IRemoteProxy, IAccessProx
                 this.parseResponse(this.mResponse);
             }
         } catch(InterruptedException e ) {
-            ExceptionBox.getInstances().message("WebService Proxy : " + e.toString());
+            this.mProgress.setErrorMessage("WebService Proxy : " + e.toString());
         }
     }
     // Method : parse response.
@@ -183,7 +183,8 @@ public class WebServiceProxy extends Filter implements IRemoteProxy, IAccessProx
                     response = getMethod(url);
                 }
             } catch (Exception e) {
-                ExceptionBox.getInstances().message(e.toString(), ExceptionBox.STYLE_LOG);
+                //ExceptionBox.getInstances().message(e.toString(), ExceptionBox.STYLE_LOG);
+                mProgress.setErrorMessage(e.toString());
             }
             // 3. Complete service.
             onServiceRunableComplete(response);

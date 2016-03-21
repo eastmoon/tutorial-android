@@ -10,6 +10,7 @@ public class Pipe {
     // Static variable
     public static String STEP_START = "pipe.step.start";
     public static String STEP_END = "pipe.step.end";
+    public static String STEP_ERROR = "pipe.step.error";
     // Member variable
     private HashMap mPipes;
     private ArrayList mRoutes;
@@ -92,6 +93,9 @@ public class Pipe {
         else if(_state.equals(Pipe.STEP_END)) {
             this.onPipeComplete(_progress);
         }
+        else if(_state.equals(Pipe.STEP_ERROR)) {
+            this.onPipeError(_progress);
+        }
     }
     // on Pipe complete
     protected void onPipeComplete(Progress _progress) {
@@ -109,5 +113,9 @@ public class Pipe {
         }
         // Start progress
         _progress.nextStep();
+    }
+    protected void onPipeError(Progress _progress) {
+        // Progress ending, clear progress variable.
+        this.mProgress.remove(_progress);
     }
 }
