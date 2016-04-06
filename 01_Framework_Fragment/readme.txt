@@ -92,6 +92,14 @@ Demo : Animation_with_dynamic_insert_for_API16
 
 由於層級調整問題，在不同版本的Android API中有提供系統的操作行為，但考量版本涵蓋的手機量，在此改以考量使用與不使用該版本API來設計範例。
 
+◎ Fragment V.S ViewGroup
+http://stackoverflow.com/questions/8617696/
+
+『The main reason to use Fragments are for the backstack and lifecycle features. Otherwise, custom views are more light weight and simpler to implement.』
+
+使用Fragment的主要理由為退回與生命週期特性，除此之外，Custom Views(自訂控制元件)更加輕量與簡易實作。
+原則上，越是輕量化設計應傾向Custom Views，越是依賴導覽系統、動態尺寸設計應傾向Fragment。
+
 ---------------------
 
 Reference page :

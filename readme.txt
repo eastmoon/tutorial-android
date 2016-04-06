@@ -186,6 +186,9 @@ http://developer.android.com/intl/zh-tw/guide/topics/manifest/activity-element.h
 Disable Screen Orientation Dynamically In Android(Java)
 http://stackoverflow.com/questions/20529576/disable-screen-orientation-dynamically-in-androidjava
 
+Supporting Different Languages
+http://developer.android.com/intl/zh-tw/training/basics/supporting-devices/languages.html
+
 ---------------------------
 
 ---------------------
