@@ -136,3 +136,14 @@ https://www.youtube.com/watch?v=wLimJf-EIl8
 Simple Nine-patch Generator
 http://romannurik.github.io/AndroidAssetStudio/nine-patches.html
 
+ANDROID自定义视图——onMeasure，MeasureSpec源码 流程 思路详解
+http://blog.csdn.net/a396901990/article/details/36475213
+
+ANDROID自定义视图——onLayout源码 流程 思路详解
+http://blog.csdn.net/a396901990/article/details/38129669
+
+ANDROID自定义视图——仿瀑布布局（附源码）
+http://blog.csdn.net/a396901990/article/details/38688409
+
+Android App支援多種不同螢幕規格的方式
+https://magiclen.org/android-screen/
