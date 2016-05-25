@@ -1,8 +1,21 @@
 ﻿◎ org.opencv.core
 Java, \sdk\java\javadoc\org\opencv\core\package-frame.html
+Java, http://docs.opencv.org/java/2.4.9/org/opencv/core/package-summary.html
 C++, http://docs.opencv.org/2.4.12/modules/core/doc/core.html
 
 Opencv.core為OpenCV的核心演算架構，包括資料結構(如：Point、Rect、Mat等)和相應的數學運算式。
+
+◎ 起始與建構
+Demo：Startup_OpenCV
+
+Andorid啟動OpenCV並不是以onCreate為啟動程序，而是在onResume內使用OpenCVLoader來啟動並呼叫載入OpenCV函式庫，並於完成後呼叫BaseLoaderCallback物件內部事件。
+可以理解的，OpenCV的啟動、運作程序內可能含有獨立運行的執行序，而此執行序並不會與Android主執行序掛勾。
+
+※ 相關文章參考：
+---------------------------
+http://docs.opencv.org/java/2.4.9/org/opencv/android/OpenCVLoader.html
+http://docs.opencv.org/java/2.4.9/org/opencv/android/BaseLoaderCallback.html
+---------------------------
 
 ◎ CV_TYPE
 \sdk\java\javadoc\org\opencv\core\CvType.html
@@ -24,6 +37,8 @@ number_of_channels：代表通道数；
 	- 4代表四通道，如RGBA，彩色含透明度圖像。
 
 ◎ 資料結構
+Demo：Core_Variable_Declare
+
 http://docs.opencv.org/2.4.12/modules/core/doc/basic_structures.html
 ※ 在Java中，輸入資料皆以Double為主；其語言結構並無使用樣板型態來產出變數型別。
 
@@ -72,12 +87,17 @@ N維度矩陣(Matrix)物件。
 http://docs.opencv.org/2.4.12/modules/core/doc/basic_structures.html#matrix-expressions
 \sdk\java\javadoc\org\opencv\core\Core.html
 
-Demo：
 
 ※ 相關文章參考：
 ---------------------------
 矩陣乘法
 https://zh.wikipedia.org/wiki/%E7%9F%A9%E9%99%A3%E4%B9%98%E6%B3%95
+
+基本矩陣運算的定義
+https://ccjou.wordpress.com/2015/07/28/
+
+Matrix calculator
+https://matrixcalc.org/zh/
 ---------------------------
 
 靜態函數操作
