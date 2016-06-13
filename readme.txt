@@ -173,6 +173,15 @@ http://stackoverflow.com/questions/22607661/no-cached-version-of-com-android-too
 ※ Work in Android Studio 1.4
 
 ---------------------------
+Error: x86 emulation currently requires hardware Acceleration
+http://www.devfish.net/post/2015/08/18/error-x86-emulation-currently-requires-hardware-acceleration-android-on-windows.aspx
+
+1. Install "Intel HAXM"
+2. Close Hyper-V before running AVD.
+	- open cmd.exe as administrator
+	- type : bcdedit /set hypervisorlaunchtype off
+
+---------------------------
 
 ◎ Android Manifest Setting
 
