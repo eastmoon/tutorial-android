@@ -123,6 +123,31 @@ LayoutParams.addRule，設定元件配置的對應方式，如對應上層的垂
 LayoutParams.setMargins，設定間距，對應好目標後，設置與該目標的相對距離。
 加入LayoutParams，透過Layout.addView第二參數設置或View.setLayoutParams直接指定。
 
+3. LayoutInflater
+
+用此方式將Layout檔案取回(回傳View)或加入特定Layout下；Activity內的setContentView函數本身即使用此方式完成動作。
+但考量動態設計下，會需要使用此方式將Layout載入並運用；考量Component建構方式，其中會指定用於Layout下的特定動作，這會間接導致無法直接生成物件的設計，若發生此狀況，則需以此方式建構。
+
+- Retrieve by Activity
+{
+	LayoutInflater inflater = this.getLayoutIUnflater();
+}
+
+- Retrieve by Context
+下述方式運作結果相同
+{
+	LayoutInflater inflater = LayoutInflater.from(context);  
+	LayoutInflater inflater = contextgetSystemService(Context.LAYOUT_INFLATER_SERVICE);	
+}
+
+- Load layout
+對於上層Layout可以在呼叫時指定，也可以在取回View後再指定給特定Layout。
+{
+	View v = inflater.inflate(R.layout.[ID], [Parent layout]);
+	[Parent layout].addView(v);
+}
+
+
 ※ 相關文章參考：
 ---------------------------
 Android, Part III: Dynamic Layouts
@@ -145,6 +170,12 @@ http://style77125tech.pixnet.net/blog/post/11600599-%5Bandroid%5D-relativelayout
 
 Android 元件佈局(二) RelativeLayout
 http://corn0521.blogspot.tw/2011/04/android-relativelayout.html
+
+Android LayoutInflater原理分析，带你一步步深入了解View(一)
+http://blog.csdn.net/guolin_blog/article/details/12921889
+
+LayoutInflater
+https://developer.android.com/reference/android/view/LayoutInflater.html
 ---------------------------
 
 ◎ Custom Views
